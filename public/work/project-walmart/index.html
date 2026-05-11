@@ -21,6 +21,21 @@
 </head>
 <body id="top">
 
+<!-- PASSWORD GATE: NDA client work -->
+<div id="gate">
+    <h2>Please enter password to continue</h2>
+    <input type="password" id="pwd" placeholder="Enter password" />
+    <button onclick="checkPassword()">Submit</button>
+    <p id="error" style="display:none; color:red;">Incorrect password</p>
+
+    <!-- back link back sits naturally below the button -->
+    <a href="javascript:history.back()">← Go back</a>
+</div>
+
+
+<!-- Put all content in this div to hide—including footer everything -->
+<div id="content" style="display:none;">
+
 <!--HEADER SECTION-->
 
     <header id="nav">
@@ -464,6 +479,8 @@
 
     </footer>
 
+</div>
+
     <!--Jquery, Popper, Bootstrap JS-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -473,8 +490,28 @@
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-    <!-- Custom Scripts -->
+    <!-- MY CUSTOM SCRIPTS -->
     <script src="../../scripts/scripts.js"></script>
+
+    <!-- SCRIPT for PASSWORD GATE LOGIC: place just before closing body tag -->
+    <script>
+        function checkPassword() {
+            const entered = document.getElementById('pwd').value;
+            const correct = "sokmebailey";
+            if (entered === correct) {
+                document.getElementById('gate').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+            } else {
+                document.getElementById('error').style.display = 'block';
+            }
+        }
+
+    // Allows users to press "Enter" to submit input field
+    document.getElementById('pwd').addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') checkPassword();
+    });
+
+    </script>
     
 </body>
 </html>
