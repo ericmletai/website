@@ -14,11 +14,14 @@ div h5 {
     font-size: 1.5em;
     color: #515151;
     opacity: 33%;
+    padding-bottom: 1.3rem;
 }
 
 div h4 {
     font-size: 22px;
     opacity: 81%;
+    line-height: 2.2rem;
+    padding-bottom: 1.3rem;
 }
 
 div h3 {
@@ -27,6 +30,7 @@ div h3 {
     font-size: 3.1vw;
     font-weight: 150;
     color: gray;
+    padding-bottom: 1.3rem;
 }
 
 div h2 {
@@ -34,6 +38,7 @@ div h2 {
     font-size: 5vw;
     font-weight: 300;
     line-height:98%;
+    padding-bottom: 1.3rem;
 }
 
 div h1 {
@@ -42,17 +47,20 @@ div h1 {
     line-height:98%;
     font-weight: 330;
     opacity: 91%;
+    padding-bottom: 1.3rem;
 }
 
 div p {
     font-size: 16px;
     color:gray;
+    padding-bottom: 1.3rem;
 }
 
 
 div a {
     color:#bbb;
     font-weight: 300;
+    padding-bottom: 1.3rem;
 }
 
 /* Quotes */
@@ -172,7 +180,6 @@ blockquote {
 
 .title-subtitle p {
     font-size: 1.3em;
-    padding-left: 1rem;
     opacity: 50%;
     
 }
