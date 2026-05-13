@@ -259,6 +259,24 @@ blockquote {
     color: #333;
 }
 
+#button-status-ongoing {
+    padding: 10px 20px 10px 20px;
+    border-radius: 30px;
+    border: none;
+    color: orange;
+    background-color:transparent;
+    border: 1px solid orange;
+}
+
+#button-status-completed {
+    padding: 10px 20px 10px 20px;
+    border-radius: 30px;
+    border: none;
+    color: green;
+    background-color:transparent;
+    border: 1px solid green;
+}
+
 
 
 body {
