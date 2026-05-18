@@ -39,6 +39,7 @@ div h2 {
     font-weight: 300;
     line-height:111%;
     padding-bottom: 1.3rem;
+    color: gray;
 }
 
 div h1 {
@@ -203,7 +204,7 @@ blockquote {
 
 .accordion-icon {
     font-size: 1rem;
-    transition: transform 200ms ease;
+    transition: transform 450ms ease;
 }
 
 .accordion-section.open .accordion-icon {
@@ -211,12 +212,22 @@ blockquote {
 }
 
 .section-content {
-    display: block;
+    overflow: hidden;
+    max-height: 80rem;
+    opacity: 1;
+    transition: max-height 0.52s ease, opacity 0.4s ease;
 }
 
-
 .accordion-section:not(.open) .section-content {
-    display: none;
+    max-height: 0;
+    opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .section-content,
+    .accordion-icon {
+        transition: none;
+    }
 }
 
 
