@@ -27,7 +27,7 @@ div h4 {
 
 div h3 {
     /* font-size: 39px; */
-    font-size: 2rem;
+    font-size: 1.7rem;
     /* font-size: 3.1vw; */
     font-weight: 150;
     color: gray;
@@ -35,7 +35,7 @@ div h3 {
 }
 
 div h2 {
-    font-size: 3rem;
+    font-size: 2.8rem;
     /* font-size: 5vw; */
     font-weight: 300;
     line-height:111%;
@@ -46,7 +46,7 @@ div h2 {
 div h1 {
     /* font-size: 102px; */
     font-size: 8vw;
-    line-height:98%;
+    line-height:106%;
     font-weight: 330;
     opacity: 91%;
     padding-bottom: 1.3rem;
@@ -477,7 +477,7 @@ footer {
 #insight .insight-quote h2 {
     /* font-size: clamp(2.6rem, 6.2vw, 5.4rem); */
     font-size: 5vw;
-    line-height: 0.95;
+    line-height: 111%;
     max-width: 88%;
     letter-spacing: -0.02em;
 }
