@@ -318,13 +318,13 @@ footer {
 
 header {
     grid-area: header;
+    padding: 0px;
 }
 
 #nav {
     position: sticky;
     top: 0;
     z-index: 1200;
-    background-color: #f5f5f5;
 }
 
 
@@ -861,7 +861,7 @@ footer {
 /* Image Logo */
 
 header img {    
-    max-width: 1.1em;
+    max-width: 0.9em;
 
 }
 
