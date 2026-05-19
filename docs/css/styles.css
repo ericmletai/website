@@ -46,7 +46,7 @@ div h2 {
 div h1 {
     /* font-size: 102px; */
     font-size: 8vw;
-    line-height:106%;
+    line-height:101%;
     font-weight: 330;
     opacity: 91%;
     padding-bottom: 1.3rem;
@@ -105,8 +105,8 @@ blockquote {
 /* Sections */ 
 
 .main-header {
-    height: 72vh;
-    width: 72vw;
+    height: 88vh;
+    width: 80vw;
     align-content: end;
     flex-wrap: wrap;
     /* border: 1px solid black; */
