@@ -26,16 +26,16 @@ div h4 {
 
 div h3 {
     /* font-size: 39px; */
-    /* font-size: 2.3rem; */
-    font-size: 3.1vw;
+    font-size: 2rem;
+    /* font-size: 3.1vw; */
     font-weight: 150;
     color: gray;
     padding-bottom: 1.3rem;
 }
 
 div h2 {
-    /* font-size: 63px; */
-    font-size: 5vw;
+    font-size: 3rem;
+    /* font-size: 5vw; */
     font-weight: 300;
     line-height:111%;
     padding-bottom: 1.3rem;
@@ -104,7 +104,7 @@ blockquote {
 /* Sections */ 
 
 .main-header {
-    height: 77vh;
+    height: 72vh;
     width: 72vw;
     align-content: end;
     flex-wrap: wrap;
@@ -176,7 +176,7 @@ blockquote {
 
 .title-subtitle {
     display: flex;
-    padding-bottom: 0.5rem;
+    /* background-color:gray; */
 }
 
 .title-subtitle p {
@@ -382,7 +382,7 @@ footer {
 
 .container-one {
     max-width: 1280px;
-    margin:66px auto;
+    margin:55px auto;
 
     display: grid;
     gap: 10px;
@@ -400,6 +400,7 @@ footer {
     /* grid-template-columns: repeat(autofill, minmax(333px, 1fr)); */
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+    /* background-color: blue; */
 }
 
 .container-three {
@@ -411,6 +412,7 @@ footer {
     /* grid-template-columns: repeat(autofill, minmax(333px, 1fr)); */
     grid-template-columns: repeat(3, 1fr);
     gap: 33px;
+    /* background-color: yellow; */
 }
 
 .container-four {
@@ -422,6 +424,7 @@ footer {
     /* grid-template-columns: repeat(autofill, minmax(333px, 1fr)); */
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
+    /* background-color:green ; */
 }
 
 .container-golden {
