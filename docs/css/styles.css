@@ -11,9 +11,8 @@
 
 div h5 {
     font-weight: 500;
-    font-size: 1.5em;
-    color: #515151;
-    opacity: 33%;
+    font-size: 1.4em;
+    opacity: 66%;
     padding-bottom: 1.3rem;
 }
 
@@ -55,7 +54,7 @@ div h1 {
 div p {
     font-size: 16px;
     color:gray;
-    padding-bottom: 1.3rem;
+    /* padding-bottom: 1.3rem; */
 }
 
 
@@ -87,7 +86,7 @@ blockquote {
     margin-right: auto;
     display: inline-block;
     /* font-size: 22px; */
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 400;
     color: #333;
     text-decoration: none;
@@ -204,6 +203,7 @@ blockquote {
 }
 
 .accordion-icon {
+    margin-top: -2rem;
     font-size: 1rem;
     transition: transform 450ms ease;
 }
@@ -400,7 +400,7 @@ footer {
 
     /* grid-template-columns: repeat(autofill, minmax(333px, 1fr)); */
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 33px;
     /* background-color: blue; */
 }
 
@@ -413,7 +413,6 @@ footer {
     /* grid-template-columns: repeat(autofill, minmax(333px, 1fr)); */
     grid-template-columns: repeat(3, 1fr);
     gap: 33px;
-    /* background-color: yellow; */
 }
 
 .container-four {
@@ -550,27 +549,28 @@ footer {
 
 
 .thumbnail {
-    /* background: gray;
+    /* 
     border: black 1px solid;
     color: #fff; */
-    background: transparent;
     border: #e8e8e8 1px solid;
     color: #333;
-    
-    font-size: 20px;
-    padding: 20px;
-    
+    padding: 22px;
 
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr;
 }
 
+.thumbnail img {
+    padding-bottom: 1.3rem;
+}
+
+/*
 .thumbnail img {
     object-fit:cover;
     height: auto;
     width: 100%;
     padding-left: 2rem;
-    /* overflow: hidden; */
+    /* overflow: hidden;
 }
 
 .thumbnail img:hover {
@@ -578,12 +578,15 @@ footer {
     transition: 150ms ease;
 }
 
+*/
+
+
 .projects {
     position: relative;
     overflow: hidden;
     background: transparent;
     color: #333;
-
+    border-radius: 11px;
     font-size: 20px;
     padding: 11px;
 }
@@ -632,8 +635,6 @@ footer {
     background: transparent;
     border: #e8e8e8 1px solid;
     color: #333;
-
-    font-size: 20px;
     padding: 20px;
     
 }
