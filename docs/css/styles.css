@@ -139,6 +139,7 @@ blockquote {
     min-width: 11vw;
     margin-bottom: 3rem;
     aspect-ratio: 1 / 1;
+    border-radius: 0.22rem;
     object-fit: cover;
 }
 
@@ -181,6 +182,9 @@ blockquote {
 .image-bleed img {
     width: 100%;
     height: auto;
+    margin:9rem auto;
+    display:block;
+    border-radius: 1rem;
 }
 
 .container-two img {
