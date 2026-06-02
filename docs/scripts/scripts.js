@@ -1,3 +1,8 @@
+/* ============================================
+   MOBILE NAV & OVERLAY
+   Controls hamburger menu and mobile navigation
+   ============================================ */
+
 // Mobile Overlay Menu Functionality
 document.addEventListener('DOMContentLoaded', function() {
     const toggler = document.querySelector('.navbar-toggler');
@@ -42,6 +47,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+
+/* ============================================
+   ACCORDIAN
+   Behavior of accordian on homepage experience, credit, & skills 
+   ============================================ */
+
+     // Accordian Reveal Behavior
     const accordionHeaders = document.querySelectorAll('.accordion-header');
     accordionHeaders.forEach(header => {
         header.addEventListener('click', function() {
@@ -52,3 +64,27 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+/* ============================================
+   INTERSECTION OBSERVER — Scroll Reveal
+   Animates .projects and other grid cards
+   into view as user scrolls down the page
+   ============================================ */
+
+   // Homepage project previews
+const revealItems = document.querySelectorAll('.projects, .cover, .thumbnail');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      entry.target.style.transitionDelay = `${i * 100}ms`;
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { 
+    threshold: 0,  // triggers the moment ANY part of the element enters viewport
+ });
+
+revealItems.forEach(el => observer.observe(el));
