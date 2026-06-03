@@ -1039,7 +1039,8 @@ header img {
 
 /* Mobile Overlay Menu */
 .mobile-overlay {
-    display: none;
+    visibility: hidden;
+    pointer-events: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -1050,10 +1051,15 @@ header img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
 }
 
 .mobile-overlay.active {
+    visibility: visible;
+    pointer-events: auto;
     display: flex;
+    opacity: 1;
 }
 
 .mobile-nav {
