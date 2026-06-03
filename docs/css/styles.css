@@ -280,7 +280,7 @@ blockquote {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
     padding-top: 2rem;
 }
 
@@ -1041,6 +1041,7 @@ header img {
 .mobile-overlay {
     visibility: hidden;
     pointer-events: none;
+    display: flex;
     position: fixed;
     top: 0;
     left: 0;
@@ -1058,7 +1059,6 @@ header img {
 .mobile-overlay.active {
     visibility: visible;
     pointer-events: auto;
-    display: flex;
     opacity: 1;
 }
 
