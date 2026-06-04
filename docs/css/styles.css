@@ -231,7 +231,7 @@ blockquote {
 }
 
 .accordion-icon {
-    margin-top: -2rem;
+    margin-top: -1rem;
     font-size: 1rem;
     transition: transform 450ms ease;
 }
