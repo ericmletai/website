@@ -362,8 +362,8 @@ main {
     grid-area: content;
     /* Keep first section from feeling cramped beneath sticky nav */
     padding-top: 12px;
-    padding-bottom: 133px;
     background-color: #f5f5f5;
+    padding-bottom: 133px;
 }
 
 
@@ -376,11 +376,17 @@ footer {
 
 /* BOTTOM PROJECT NAVIGATION */
 
+main.has-project-nav {
+    padding-bottom: 0;
+}
+
 .project-nav {
+    background-color:transparent;
     display: grid;
     grid-template-columns: 1fr 1fr;
     border-top: 1px solid #e8e8e8;
     margin-top: 6rem;
+    padding: 1.6rem 0 1.6rem 0;
 }
 
 .project-nav a {
@@ -478,7 +484,7 @@ footer {
 
 .container-three {
     max-width: 1280px;
-    margin:133px auto;
+    margin:66px auto;
 
     display: grid;
 
