@@ -5,35 +5,26 @@
 
 // Mobile Overlay Menu Functionality
 document.addEventListener('DOMContentLoaded', function() {
-    const toggler = document.querySelector('.navbar-toggler');
+    const toggler = document.getElementById('menuToggle');
     const overlay = document.getElementById('mobile-overlay');
-    const closeBtn = document.getElementById('close-overlay');
     const mobileLinks = document.querySelectorAll('.mobile-link');
 
-    // Function to show overlay
-    function showOverlay() {
-        overlay.classList.add('active');
-        document.body.classList.add('overlay-open');
-    }
+function showOverlay() {
+  overlay.classList.add('active');
+  toggler.classList.add('active');
+  document.body.classList.add('overlay-open');
+}
 
-    // Function to hide overlay
-    function hideOverlay() {
-        overlay.classList.remove('active');
-        document.body.classList.remove('overlay-open');
-    }
+function hideOverlay() {
+  overlay.classList.remove('active');
+  toggler.classList.remove('active');
+  document.body.classList.remove('overlay-open');
+}
 
-    // Toggle overlay on hamburger click
-    toggler.addEventListener('click', function(e) {
-        e.preventDefault(); // Prevent any default Bootstrap behavior
-        if (overlay.classList.contains('active')) {
-            hideOverlay();
-        } else {
-            showOverlay();
-        }
-    });
-
-    // Close overlay on close button click
-    closeBtn.addEventListener('click', hideOverlay);
+toggler.addEventListener('click', function(e) {
+  e.preventDefault();
+  overlay.classList.contains('active') ? hideOverlay() : showOverlay();
+});
 
     // Close overlay when a link is clicked
     mobileLinks.forEach(link => {

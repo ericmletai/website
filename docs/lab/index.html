@@ -39,26 +39,30 @@
             <a class="navbar-brand" a href="../index.html"><img src="../img/emlt-logo.svg" id="logo"></a>
 
             <!--Code for turning menu links into button icon on smaller screens-->
-            <button class="navbar-toggler navbar-light d-lg-none" type="button" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler hamburger-btn" id="menuToggle" type="button" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </button>
 
             <ul class="navbar-nav ml-auto d-none d-lg-flex">
+                <!--
+                <li class="nav-item"><a href="#" class="nav-link">Services</a></li>
+                -->
                 <li class="nav-item"><a href="../work/index.html" class="nav-link">Work</a></li>
-                <li class="nav-item"><a href="../lab/index.html" class="nav-link">Lab</a></li>
+                <li class="nav-item"><a href="index.html" class="nav-link">Lab</a></li>
             </ul>
 
             <!-- Mobile Overlay Menu -->
             <div id="mobile-overlay" class="mobile-overlay">
-                <button class="close-btn" id="close-overlay">&times;</button>
                 <ul class="mobile-nav">
-                    <li><a href="../work/index.html" class="mobile-link">Work</a></li>
-                    <li><a href="../lab/index.html" class="mobile-link">Lab</a></li>
+                  <li><a href="../work/index.html" class="mobile-link">Work</a></li>
+                  <li><a href="index.html" class="mobile-link">Lab</a></li>
                 </ul>
-            </div>
+              </div>
         </nav>
     </header>
-
+    
     <!--MAIN CONTENT SECTION-->
 
     <main>

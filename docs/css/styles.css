@@ -478,7 +478,7 @@ footer {
 
 .container-three {
     max-width: 1280px;
-    margin:66px auto;
+    margin:133px auto;
 
     display: grid;
 
@@ -1093,22 +1093,49 @@ header img {
     color: white;
 }
 
-.mobile-overlay .close-btn {
-    display: block;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 2rem;
-    cursor: pointer;
-    z-index: 10000;
-}
 
-.mobile-overlay .close-btn:hover {
-    color: #ccc;
-}
+.hamburger-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    background: none !important;
+    border: none !important;
+    padding: 0;
+    z-index: 10000;
+  }
+  
+  .hamburger-btn:focus {
+    box-shadow: none;
+    outline: none;
+  }
+  
+  .bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background:gray;
+    border-radius: 2px;
+    transition: transform 0.35s ease, opacity 0.25s ease;
+    transform-origin: center;
+  }
+  
+  .hamburger-btn.active .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+    background: white;
+  }
+  .hamburger-btn.active .bar:nth-child(2) {
+    background: white;
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  .hamburger-btn.active .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+    background: white;
+  }
 
 /* Ensure body doesn't scroll when overlay is open */
 body.overlay-open {
