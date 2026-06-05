@@ -466,7 +466,7 @@ main.has-project-nav {
 
 .container-two {
     max-width: 1280px;
-    margin:66px auto;
+    margin:33px auto 99px auto;
 
     display: grid;
 
@@ -484,7 +484,7 @@ main.has-project-nav {
 
 .container-three {
     max-width: 1280px;
-    margin:66px auto;
+    margin:33px auto 99px auto;
 
     display: grid;
 
