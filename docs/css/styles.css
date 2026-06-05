@@ -189,7 +189,7 @@ blockquote {
 .image-bleed img {
     width: 100%;
     height: auto;
-    margin:9rem auto;
+    margin:4rem auto;
     display:block;
     border-radius: 1rem;
 }
@@ -386,7 +386,7 @@ main.has-project-nav {
     grid-template-columns: 1fr 1fr;
     border-top: 1px solid #e8e8e8;
     margin-top: 6rem;
-    padding: 2rem 0 2rem 0;
+    padding: 1.3rem 0 1.3rem 0;
 }
 
 .project-nav a {
