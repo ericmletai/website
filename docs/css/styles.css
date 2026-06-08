@@ -25,20 +25,22 @@ div h4 {
 
 div h3 {
     /* font-size: 39px; */
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     /* font-size: 3.1vw; */
-    font-weight: 150;
+    font-weight: 200;
     color: gray;
-    line-height: 2.2rem;
+    line-height: 2.1rem;
+    opacity: 80%;
 }
 
 div h2 {
     font-size: 2.8rem;
     /* font-size: 5vw; */
-    font-weight: 250;
+    font-weight: 200;
     line-height:111%;
     padding-bottom: 1.3rem;
     color: gray;
+    opacity: 91%;
 }
 
 div h1 {
@@ -53,6 +55,7 @@ div h1 {
 div p {
     font-size: 16px;
     color:gray;
+    opacity: 90%;
 }
 
 
@@ -622,7 +625,8 @@ main.has-project-nav {
 
 #impact h3 {
     /* max-width: 26ch; */
-    line-height: 1.06;
+    line-height: 2.1rem;
+    opacity: 80%;
 }
 
 .legacy-main-content {
