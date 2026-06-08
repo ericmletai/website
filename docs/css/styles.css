@@ -174,6 +174,7 @@ blockquote {
 
 .article-copy h5 {
     margin-bottom: 2rem;
+    width: 95%;
 }
 
 .annotation {
@@ -1118,12 +1119,12 @@ header img {
     z-index: 10000;
   }
   
-  .hamburger-btn:focus {
+.hamburger-btn:focus {
     box-shadow: none;
     outline: none;
   }
   
-  .bar {
+.bar {
     display: block;
     width: 22px;
     height: 2px;
