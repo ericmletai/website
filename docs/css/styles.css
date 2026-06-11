@@ -638,8 +638,9 @@ main.has-project-nav {
 .thumbnail {
     /* 
     border: black 1px solid;
-    color: #fff; */
     border: #e8e8e8 1px solid;
+    color: #fff; */
+    background: #FAFAFA;
     color: #333;
     padding: 22px;
     display: grid;
@@ -741,9 +742,9 @@ main.has-project-nav {
 .cover {
     /* border: black 1px solid;
     background: gray;
-    color: #fff; */
-    background: transparent;
     border: #e8e8e8 1px solid;
+    color: #fff; */
+    background: #FAFAFA;
     border-radius: 1rem;
     color: #333;
     padding: 20px;
