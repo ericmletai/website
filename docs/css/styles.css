@@ -9,6 +9,12 @@
 
 /* Copy default sizing */
 
+div h6 {
+    font-size: .8rem;
+    letter-spacing: .1em;
+    font-weight: 500;
+}
+
 div h5 {
     font-weight: 400;
     font-size: 1rem;
@@ -120,6 +126,50 @@ blockquote {
   }
 
 #main-cta:hover::before {
+    transform: scaleX(1);
+}
+
+
+#second-cta {
+    background-color: transparent;
+    border-radius: 3rem;
+    padding: .75rem 2rem;
+    border: 1px solid #e8e8e8;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    /* font-size: 22px; */
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #e8e8e8;
+    text-decoration: none;
+
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    transition: #333 0.35s, #333 0.35s;
+}
+
+#second-cta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 3rem;
+    background:white;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+    z-index: -1;
+}
+
+#second-cta:hover {
+    color: #333;
+    border-color: #333;
+  }
+
+#second-cta:hover::before {
     transform: scaleX(1);
 }
 
@@ -294,6 +344,30 @@ blockquote {
     gap: 10px;
     padding-bottom: 2rem;
     padding-top: 2rem;
+}
+
+/* Contract Status Pill in Footer */
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+    background: rgba(255, 255, 255, 0.06);
+    border: 0.5px solid rgba(255, 255, 255, 0.12);
+    border-radius: 100px;
+    padding: .4rem .8rem;
+    margin-bottom: 1rem;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #D4A017;
+    flex-shrink: 0;
 }
 
 #button-pill {
