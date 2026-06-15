@@ -54,8 +54,6 @@ div h1 {
     font-size: 8vw;
     line-height:101%;
     font-weight: 330;
-    opacity: 91%;
-    padding-bottom: 1.3rem;
 }
 
 div p {
@@ -172,6 +170,37 @@ blockquote {
 #second-cta:hover::before {
     transform: scaleX(1);
 }
+
+/* Typewriter Hero Animation */ 
+
+/* Controls the fade in/out on the full headline block */
+#hero-text {
+    min-height: calc(4 * 1.01em);
+    opacity: 1;
+    transition: opacity 0.6s ease;
+  }
+  
+  /* CTA starts hidden — JS fades it in after last line lands */
+  #main-cta {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+  }
+  
+  /* The blinking cursor character injected by JS */
+  .tw-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 0.85em;
+    background: currentColor;
+    margin-left: 2px;
+    vertical-align: -0.05em;
+    animation: tw-blink 0.9s steps(1) infinite;
+  }
+  
+  @keyframes tw-blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+  }
 
 
 
