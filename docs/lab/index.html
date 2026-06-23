@@ -16,6 +16,7 @@
 
     <!-- Include your CSS files here -->
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="css/chatbot.css">
 
     <!--Fonts Go Here-->
 
@@ -35,6 +36,7 @@
 
     <!-- Custom Scripts -->
     <script src="../scripts/scripts.js" defer></script>
+    <script src="js/chatbot.js" defer></script>
 
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
@@ -284,6 +286,44 @@
 
 
     </main>
+
+    <!-- CHATBOT EXPERIMENTAL-->
+
+<!-- Floating toggle button - opens chat window -->
+<button id="chat-toggle" aria-label="Open chat">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
+      <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+    </svg>
+  </button>
+
+<!-- Chat window - hidden by default via CSS, toggled by JS -->
+<div id="chat-window" class="hidden">
+
+    <!-- Header: title left, close button right -->
+    <div id="chat-header">
+      Studio Guide AI
+      <button id="close-btn" aria-label="Close chat">&#x2715;</button>
+    </div>
+  
+    <!-- Messages area -->
+    <div id="chat-messages">
+      <div class="message bot">Hi, I'm Bailee, Eric's AI representative. I can answer any questions about him and his work.</div>
+    </div>
+  
+    <!-- Starter prompts — hidden once conversation begins -->
+    <div id="starter-prompts">
+      <button class="starter-btn">What kind of work does he do?</button>
+      <button class="starter-btn">What industries has he worked in?</button>
+      <button class="starter-btn">What's his design process?</button>
+    </div>
+  
+    <!-- Input row -->
+    <div id="chat-input-row">
+      <input id="chat-input" type="text" placeholder="Type a message..." />
+      <button id="chat-send">Send</button>
+    </div>
+  
+  </div>
 
     <footer id="footer">
     
