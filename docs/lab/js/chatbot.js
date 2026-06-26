@@ -57,7 +57,6 @@ function addMessage(text, sender) {
 
 // ─── Send Message ─────────────────────────────────────────────
 
-// Accepts optional text param so starter buttons can pass their label directly
 async function sendMessage(text) {
   if (!text) text = chatInput.value.trim();
   if (!text) return; // ignore empty sends
@@ -77,8 +76,21 @@ async function sendMessage(text) {
     });
 
     const data = await response.json();
-    chatMessages.removeChild(chatMessages.lastChild); // remove "..."
-    addMessage(data.reply, 'bot');
+
+    // Remove "..." placeholder before rendering reply
+    chatMessages.removeChild(chatMessages.lastChild);
+
+    // Split on ||| delimiter if present — renders as two bubbles with a thinking pause
+    // When model responds as one block, renders naturally as a single bubble
+    const parts = data.reply.split('|||').map(p => p.trim()).filter(Boolean);
+
+    if (parts.length > 1) {
+      addMessage(parts[0], 'bot'); // first bubble appears immediately
+      setTimeout(() => addMessage(parts[1], 'bot'), 700); // second bubble after pause — feels like thinking
+    } else {
+      addMessage(data.reply, 'bot'); // single bubble when model responds naturally
+    }
+
   } catch (error) {
     chatMessages.removeChild(chatMessages.lastChild);
     addMessage('Something went wrong. Try again.', 'bot');
