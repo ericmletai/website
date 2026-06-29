@@ -54,6 +54,12 @@
   flex-shrink: 0; /* stays fixed at top, never shrinks */
 }
 
+#chat-header-controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
 /* Close button — sits right side of header */
 #close-btn {
   background: none;
@@ -64,6 +70,18 @@
   padding: 0 4px;
   line-height: 1;
 }
+
+/* Refresh button — matches close, no hover animation */
+#refresh-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 0 4px;
+  line-height: 1;
+}
+
 
 /* ─── Messages ───────────────────────────────────────────────── */
 #chat-messages {

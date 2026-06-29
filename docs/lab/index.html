@@ -299,10 +299,13 @@
 <!-- Chat window - hidden by default via CSS, toggled by JS -->
 <div id="chat-window" class="hidden">
 
-    <!-- Header: title left, close button right -->
+    <!-- Header: title left, refresh & close button right -->
     <div id="chat-header">
       Chat with Bailee
-      <button id="close-btn" aria-label="Close chat">&#x2715;</button>
+        <div id="chat-header-controls">
+            <button id="refresh-btn" aria-label="Restart conversation">&#8635;</button>
+            <button id="close-btn" aria-label="Close chat">&#x2715;</button>
+        </div>
     </div>
   
     <!-- Messages area -->
@@ -315,7 +318,7 @@
       <button class="starter-btn">I'm looking to hire a designer</button>
       <button class="starter-btn">I have a project I need help with</button>
       <button class="starter-btn">I'm curious about Eric's work</button>
-      <button class="starter-btn">Give feedback on this chat</button>
+      <button class="starter-btn">Give feedback on chat</button>
     </div>
   
     <!-- Input row -->
