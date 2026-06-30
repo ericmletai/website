@@ -7,6 +7,8 @@ const chatSend = document.getElementById('chat-send');
 const closeBtn = document.getElementById('close-btn');
 const refreshBtn = document.getElementById('refresh-btn');
 const starterPrompts = document.getElementById('starter-prompts');
+const chatNudge = document.getElementById('chat-nudge');
+const nudgeClose = document.getElementById('nudge-close');
 
 // Live Vercel backend — safe to expose, key stays server-side
 const API_URL = 'https://chatbot-backend-one-tau.vercel.app/api/chat';
@@ -14,19 +16,83 @@ const API_URL = 'https://chatbot-backend-one-tau.vercel.app/api/chat';
 // Conversation history — grows each exchange, sent in full every request
 const history = [];
 
-// Opening greeting and starter prompts HTML — stored so refresh can restore them
-const GREETING = `Hi, I'm Bailee. What are you working on or what brought you here today?`;
+// Default greeting and starters — used on normal icon open or refresh
+const GREETING = `Hi, I'm Bailee — an AI created by Eric to explore this experience. What brings you here today?`;
 const STARTERS_HTML = `
   <button class="starter-btn">I'm looking to hire a designer</button>
   <button class="starter-btn">I have a project I need help with</button>
   <button class="starter-btn">I'm curious about Eric's work</button>
-  <button class="starter-btn">Give feedback on chat</button>
+  <button class="starter-btn">Give feedback on this experiment</button>
 `;
 
-// ─── Open / Close ─────────────────────────────────────────────
+// Tailored opener — used only when chat is opened via the nudge bubble
+const NUDGE_GREETING = `Looking to reach Eric, or have a question? I can help.`;
 
+// ─── Nudge State ──────────────────────────────────────────────
+let nudgeShown = false;
+let nudgeDismissed = false;
+
+// ─── Dismiss Nudge ────────────────────────────────────────────
+function dismissNudge() {
+  nudgeDismissed = true;
+  chatNudge.classList.add('fade-out');
+  setTimeout(() => chatNudge.classList.add('hidden'), 400);
+}
+
+// Auto-dismiss after 7 seconds if untouched
+function startNudgeTimer() {
+  setTimeout(() => {
+    if (!nudgeDismissed) dismissNudge();
+  }, 7000);
+}
+
+// ─── Show Nudge ───────────────────────────────────────────────
+function showNudge() {
+  if (nudgeShown || nudgeDismissed) return; // only show once per session
+  if (!chatWindow.classList.contains('hidden')) return; // skip if chat already open
+  nudgeShown = true;
+  chatNudge.classList.remove('hidden');
+  chatNudge.classList.remove('fade-out');
+  startNudgeTimer();
+}
+
+// ─── Scroll Trigger ───────────────────────────────────────────
+// Fires nudge when user scrolls within 300px of the footer
+window.addEventListener('scroll', () => {
+  if (nudgeShown || nudgeDismissed) return;
+
+  const footer = document.querySelector('footer');
+  if (!footer) return;
+
+  const footerTop = footer.getBoundingClientRect().top;
+  const windowHeight = window.innerHeight;
+
+  if (footerTop < windowHeight + 300) {
+    showNudge();
+  }
+});
+
+// ─── Nudge Click (entire bubble, opens chat with tailored greeting) ──
+chatNudge.addEventListener('click', (e) => {
+  if (e.target === nudgeClose) return; // let the × handle its own dismiss logic separately
+  dismissNudge();
+  chatWindow.classList.remove('hidden');
+
+  // Tailored opener replaces default greeting — continues the nudge's context
+  chatMessages.innerHTML = `<div class="message bot">${NUDGE_GREETING}</div>`;
+  starterPrompts.style.display = 'none'; // intent is already implied, skip starters
+});
+
+// Close button inside nudge — dismiss only, doesn't open chat
+nudgeClose.addEventListener('click', (e) => {
+  e.stopPropagation(); // prevents the bubble's own click handler from also firing
+  dismissNudge();
+});
+
+// ─── Open / Close Chat (via icon) ─────────────────────────────
 toggleBtn.addEventListener('click', () => {
   chatWindow.classList.remove('hidden');
+  if (!nudgeDismissed) dismissNudge();
 });
 
 closeBtn.addEventListener('click', () => {
@@ -34,28 +100,17 @@ closeBtn.addEventListener('click', () => {
 });
 
 // ─── Refresh ──────────────────────────────────────────────────
-
-// Resets conversation to initial state without closing the window
-// Clears history, messages, and restores greeting + starter prompts
+// Always resets to default greeting, regardless of how chat was opened
 refreshBtn.addEventListener('click', () => {
-  // Clear conversation history array
   history.length = 0;
-
-  // Clear all messages and restore opening greeting
   chatMessages.innerHTML = `<div class="message bot">${GREETING}</div>`;
-
-  // Restore starter prompts and re-attach their click listeners
   starterPrompts.innerHTML = STARTERS_HTML;
   starterPrompts.style.display = 'flex';
-  attachStarterListeners(); // re-attach since innerHTML replaced the old elements
-
-  // Clear input field just in case
+  attachStarterListeners();
   chatInput.value = '';
 });
 
 // ─── Starter Prompts ──────────────────────────────────────────
-
-// Extracted into a function so both initial load and refresh can call it
 function attachStarterListeners() {
   document.querySelectorAll('.starter-btn').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -66,11 +121,9 @@ function attachStarterListeners() {
   });
 }
 
-// Attach on initial load
 attachStarterListeners();
 
 // ─── Messages ─────────────────────────────────────────────────
-
 function addMessage(text, sender) {
   const msg = document.createElement('div');
   msg.classList.add('message', sender);
@@ -78,7 +131,6 @@ function addMessage(text, sender) {
   chatMessages.appendChild(msg);
   chatMessages.scrollTop = chatMessages.scrollHeight;
 
-  // Only log real messages to history, not the "..." typing indicator
   if (text !== '...') {
     history.push({
       role: sender === 'user' ? 'user' : 'assistant',
@@ -88,7 +140,6 @@ function addMessage(text, sender) {
 }
 
 // ─── Send Message ─────────────────────────────────────────────
-
 async function sendMessage(text) {
   if (!text) text = chatInput.value.trim();
   if (!text) return;
@@ -109,8 +160,6 @@ async function sendMessage(text) {
     const data = await response.json();
     chatMessages.removeChild(chatMessages.lastChild);
 
-    // Split on ||| delimiter if present — two bubbles with thinking pause
-    // Single bubble when model responds naturally without delimiter
     const parts = data.reply.split('|||').map(p => p.trim()).filter(Boolean);
 
     if (parts.length > 1) {
@@ -128,16 +177,8 @@ async function sendMessage(text) {
 }
 
 // ─── Input Triggers ───────────────────────────────────────────
-
 chatSend.addEventListener('click', () => sendMessage());
 
 chatInput.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') sendMessage();
 });
-
-
-
-
-
-// ─── Scroll Nudge ─────────────────────────────────────────────
-// Feature 2 placeholder — scroll trigger logic will go here

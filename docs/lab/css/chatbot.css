@@ -172,6 +172,56 @@
   cursor: pointer;
 }
 
+/* ─── Scroll Nudge ───────────────────────────────────────────── */
+/* Desktop only — hidden on mobile via media query at bottom */
+#chat-nudge {
+  cursor: pointer;
+  position: fixed;
+  bottom: 90px; /* sits just above the toggle button */
+  right: 20px;
+  background: #2A2A2D; /* matches header color — reads clearly against both light page and dark footer */
+  color: white;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 13px;
+  max-width: 220px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 999;
+  opacity: 1;
+  transition: opacity 0.4s ease; /* smooth fade out on dismiss */
+}
+
+#chat-nudge.hidden {
+  display: none;
+}
+
+#chat-nudge.fade-out {
+  opacity: 0; /* fade before removing from DOM */
+  pointer-events: none;
+}
+
+/* Close button inside nudge */
+#nudge-close {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0;
+  line-height: 1;
+  flex-shrink: 0; /* prevents button from shrinking */
+}
+
+/* Hide nudge entirely on mobile — chat toggle is prominent enough */
+@media (max-width: 480px) {
+  #chat-nudge {
+    display: none !important;
+  }
+}
+
 /* ANIMATIONS CONSIDERATIONS */
 /* Keyframe: slides up slightly and fades in on open */
 @keyframes chatSlideUp {
