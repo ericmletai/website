@@ -24,6 +24,7 @@
 
      <!-- Include your CSS files here -->
     <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../assets/css/chatbot.css">
 
     <!--Fonts Go Here-->
 
@@ -43,6 +44,7 @@
 
     <!-- Custom Scripts -->
     <script src="../../scripts/scripts.js" defer></script>
+    <script src="../../assets/js/chatbot.js" defer></script>
 
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
@@ -483,6 +485,57 @@
         <div class="legacy-main-content" aria-hidden="true">
          
     </main>
+
+
+    <!-- CHATBOT EXPERIMENTAL-->
+
+<!-- Floating toggle button - opens chat window -->
+<button id="chat-toggle" aria-label="Open chat">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
+      <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+    </svg>
+  </button>
+
+<!-- Chat window - hidden by default via CSS, toggled by JS -->
+<div id="chat-window" class="hidden">
+
+    <!-- Header: title left, refresh & close button right -->
+    <div id="chat-header">
+      Chat with Bailee
+        <div id="chat-header-controls">
+            <button id="refresh-btn" aria-label="Restart conversation">&#8635;</button>
+            <button id="close-btn" aria-label="Close chat">&#x2715;</button>
+        </div>
+    </div>
+  
+    <!-- Messages area -->
+    <div id="chat-messages">
+      <div class="message bot">Hi, I'm Bailee — I can help you navigate this project or answer questions about Eric's process. What are you looking for?</div>
+    </div>
+  
+    <!-- Starter prompts — hidden once conversation begins -->
+    <div id="starter-prompts">
+        <button class="starter-btn">What was the key insight?</button>
+        <button class="starter-btn">What was the impact of this project?</button>
+        <button class="starter-btn">How does this relate to my problem?</button>
+    </div>
+  
+    <!-- Input row -->
+    <div id="chat-input-row">
+      <input id="chat-input" type="text" placeholder="Type a message..." />
+      <button id="chat-send">Send</button>
+    </div>
+  
+  </div>
+
+  <!-- SCROLL NUDGE -->
+
+  <!-- Scroll nudge — appears near footer on desktop only, hidden by default -->
+  <div id="chat-nudge" class="hidden">
+    <span id="nudge-text"></span>
+    <button id="nudge-close" aria-label="Dismiss">&#x2715;</button>
+  </div>
+
 
     <!--FOOTER SECTION-->
 

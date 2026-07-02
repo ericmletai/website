@@ -16,7 +16,7 @@
 
     <!-- Include your CSS files here -->
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="css/chatbot.css">
+    <link rel="stylesheet" href="../assets/css/chatbot.css">
 
     <!--Fonts Go Here-->
 
@@ -36,7 +36,7 @@
 
     <!-- Custom Scripts -->
     <script src="../scripts/scripts.js" defer></script>
-    <script src="js/chatbot.js" defer></script>
+    <script src="../assets/js/chatbot.js" defer></script>
 
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
@@ -312,10 +312,9 @@
   
     <!-- Starter prompts — hidden once conversation begins -->
     <div id="starter-prompts">
-      <button class="starter-btn">I'm looking to hire a designer</button>
-      <button class="starter-btn">I have a project I need help with</button>
-      <button class="starter-btn">I'm curious about Eric's work</button>
-      <button class="starter-btn">Give feedback on chat</button>
+        <button class="starter-btn">What is this experiment about?</button>
+        <button class="starter-btn">Tell me about Eric's work</button>
+        <button class="starter-btn">Give feedback on this chat</button>
     </div>
   
     <!-- Input row -->
@@ -329,8 +328,8 @@
   <!-- SCROLL NUDGE -->
 
   <!-- Scroll nudge — appears near footer on desktop only, hidden by default -->
-<div id="chat-nudge" class="hidden">
-    Looking for contact info or have questions?
+  <div id="chat-nudge" class="hidden">
+    <span id="nudge-text"></span>
     <button id="nudge-close" aria-label="Dismiss">&#x2715;</button>
   </div>
 
