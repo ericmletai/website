@@ -14,7 +14,7 @@ const nudgeClose = document.getElementById('nudge-close');
 const API_URL = 'https://chatbot-backend-one-tau.vercel.app/api/chat';
 
 // Conversation history — grows each exchange, sent in full every request
-const history = [];
+const chatHistory = [];
 
 // ─── Page Detection ───────────────────────────────────────────
 // Detects which page the widget is on and sets content accordingly
@@ -142,7 +142,7 @@ closeBtn.addEventListener('click', () => {
 // ─── Refresh ──────────────────────────────────────────────────
 // Always resets to default greeting regardless of how chat was opened
 refreshBtn.addEventListener('click', () => {
-  history.length = 0;
+  chatHistory.length = 0;
   chatMessages.innerHTML = `<div class="message bot">${GREETING}</div>`;
   starterPrompts.innerHTML = STARTERS_HTML;
   starterPrompts.style.display = 'flex';
@@ -182,7 +182,7 @@ function addMessage(text, sender) {
   chatMessages.scrollTop = chatMessages.scrollHeight;
 
   if (text !== '...') {
-    history.push({
+    chatHistory.push({
       role: sender === 'user' ? 'user' : 'assistant',
       content: text
     });
@@ -205,7 +205,7 @@ async function sendMessage(text) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        messages: history,
+        messages: chatHistory,
         currentPage: window.location.href // tells Bailey which page visitor is on
       })
     });
