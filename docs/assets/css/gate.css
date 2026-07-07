@@ -1,0 +1,102 @@
+/* ─── Reusable Password Gate Styles ───────────────────────────
+   Shared across all projects — do not edit per-project. */
+
+   #gate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    animation: gateFadeIn 0.5s ease-out;
+  }
+  
+  #gate h2 {
+    margin-bottom: 1.3rem;
+    font-size: 3.3vw;
+  }
+  
+  #gate input[type="password"] {
+    padding: 10px 0;
+    font-size: 1rem;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
+    width: 260px;
+    outline: none;
+    background: transparent;
+  }
+  
+  #gate input[type="password"]:focus {
+    border-bottom: 1px solid #333;
+  }
+
+  #gate input[type="password"]::placeholder {
+    color: #bbb;
+}
+  
+  #gate button {
+    background-color: transparent;
+    border-radius: 3rem;
+    padding: .75rem 2rem;
+
+    border: 1px solid #515151;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  #gate button:hover {
+    background-color: #3a3442;
+    color: #e8e8e8;
+    transition: 150ms;
+  }
+  
+  #gate #error {
+    display: none;
+    margin-top: 12px;
+    color: #e0524d;
+    font-size: 0.9rem;
+  }
+  
+  #gate a {
+    color: #888;
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+  
+  #gate a:hover {
+    color: #333;
+  }
+  
+  #protected-content {
+    display: none;
+  }
+
+/* ─── ANIMATIONS */
+
+  @keyframes gateFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+  /* ─── SHAKE ANIMATION */
+
+  #gate.shake {
+    animation: gateShake 0.35s;
+  }
+  
+  @keyframes gateShake {
+    25% { transform: translateX(-6px); }
+    75% { transform: translateX(6px); }
+  }

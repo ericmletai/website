@@ -25,6 +25,7 @@
      <!-- Include your CSS files here -->
     <link rel="stylesheet" href="../../css/styles.css">
     <link rel="stylesheet" href="../../assets/css/chatbot.css">
+    <link rel="stylesheet" href="../../assets/css/gate.css">
 
     <!--Fonts Go Here-->
 
@@ -45,9 +46,16 @@
     <!-- Custom Scripts -->
     <script src="../../scripts/scripts.js" defer></script>
     <script src="../../assets/js/chatbot.js" defer></script>
+    <script src="../../assets/js/gate.js" defer></script>
 
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+    <!-- Password Gate Script -->
+<script>
+    window.GATE_ENABLED = true;
+    window.GATE_HASH = "aa5a6aefc2bd8b2ae2d113f50f9b734ae465c5f092ae03c5da9bda09b887252b";
+</script>
 
 </head>
 
@@ -66,7 +74,7 @@
 
 
 <!-- Put all content in this div to hide—including footer everything -->
-<div id="content" style="display:none;">
+<div id="protected-content">
 
 <!--HEADER SECTION-->
 
@@ -595,26 +603,6 @@
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-
-    <!-- SCRIPT for PASSWORD GATE LOGIC: place just before closing body tag -->
-    <script>
-        function checkPassword() {
-            const entered = document.getElementById('pwd').value;
-            const correct = "sokmebailey";
-            if (entered === correct) {
-                document.getElementById('gate').style.display = 'none';
-                document.getElementById('content').style.display = 'block';
-            } else {
-                document.getElementById('error').style.display = 'block';
-            }
-        }
-
-    // Allows users to press "Enter" to submit input field
-    document.getElementById('pwd').addEventListener('keydown', function(e) {
-        if (e.key === 'Enter') checkPassword();
-    });
-
-    </script>
     
 </body>
 </html>
