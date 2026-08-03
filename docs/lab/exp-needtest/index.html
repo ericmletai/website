@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Mobile Play for The Casual Gamer</title>
-    <meta name="description" content="A look at the casual mobile gamer — how they play in bursts, what keeps them coming back, and how subscription servers and microtransactions are shipping unfinished games to the players least likely to complain.">
-    <meta name="keywords" content="casual gamer, mobile gaming, mobile play behavior, types of gamers, burst gaming, casual mobile games, microtransactions, live service games, game subscriptions, unfinished games, mobile game design, free to play, pay to win, casual game experience, mobile game monetization, gaming psychology, in-app purchases, game UX, hyper-casual games, idle games, puzzle games, mobile gaming habits, gaming behavior, casual play patterns, game design ethics, live ops, battle pass, mobile game culture">
+    <title>Chatbot I Actually Wanted to Build</title>
+    <meta name="description" content="What building a chatbot from scratch taught me about prompt engineering, visibility restraint, and why the backend is the real design surface.">
+    <meta name="keywords" content="AI chatbot, prompt engineering, UX design, chatbot design, conversational UI, Bailey AI, sycophancy in AI, page context, visitor modeling, adaptive chatbot, design experiment, lab experiment, OpenRouter, Vercel, token usage, chatbot trust, AI personality, system prompt, human-centered AI, chatbot UX">
     <meta name="author" content="Collective Engram">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://collectiveengram.com/lab/exp-inlab/">
+    <link rel="canonical" href="https://collectiveengram.com/lab/exp-needtest/">
 
 <!-- Open Graph (Facebook, LinkedIn) -->
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Mobile Play for The Casual Gamer">
-    <meta property="og:description" content="Casual gamers play in bursts — not marathons. A look at who they are, how they play, and why live service models and microtransactions are quietly taking advantage of them.">
-    <meta property="og:url" content="https://collectiveengram.com/lab/exp-inlab/">
+    <meta property="og:title" content="Chatbot I Actually Wanted to Build">
+    <meta property="og:description" content="Five lessons from building an AI chatbot that actually feels intentional — from engineering against sycophancy to knowing when not to show up at all.">
+    <meta property="og:url" content="https://collectiveengram.com/lab/exp-needtest/">
     <meta property="og:site_name" content="Collective Engram">
-    <meta property="og:image" content="https://collectiveengram.com/img/og/og-mobilegamer.webp">
+    <meta property="og:image" content="https://collectiveengram.com/img/og/og-chatbot.webp">
     <meta property="og:image:width" content="1800">
     <meta property="og:image:height" content="945">
     <meta property="og:locale" content="en_US">
@@ -39,7 +39,7 @@
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Website" />
-    <link rel="manifest" href="../../favicon/site.webmanifest" />     
+    <link rel="manifest" href="../../favicon/site.webmanifest" />      
 
     <!-- Custom Scripts -->
     <script src="../../scripts/scripts.js" defer></script>
@@ -95,10 +95,11 @@
 
                 <div class="title-subtitle">
                 <!--<h5>Date XX, 2026</h5> -->
-                    <p>Experimental</p>
+                    <p>July 2026</p>
                 </div>
-                <h1>Mobile gameplay for the casual gamer
-                </h1>        
+                <h1>The Chatbot I Actually Want to Build
+                </h1>
+                
                 <div class="container-flex-left">
                     <button id="button-status-ongoing">Ongoing Experiment</button>    
                 </div>
@@ -111,7 +112,7 @@
         </div>
 
         <div class="image-bleed">
-            <img src="img/mobile-inhand.svg">
+            <img src="img/starter-greeting.svg">
         </div>
 
          <!--CONTEXT/INSIGHT SECTION-->
@@ -139,31 +140,22 @@
         <section id="problem" class="case-section">
             <div class="container-one case-section-header">
                 <div class="container-golden case-heading">
-                    <div class="product-divider"><p>Published by Eric Le Tai</p></div>
-                    <div><h2>Designing for the Casual Player</h2></div>
+                    <div class="product-divider"><p>Experimental</p></div>
+                    <div><h2>One-Size Fits No One</h2></div>
                 </div>
             </div>
-            <div class="container-one case-section-body article-copy">
+            <div class="container-one case-section-body">
                 <div class="container-goldenflex case-media">
-                    <div class="annotation"><h6>Research confirms that players come in with vastly different levels of trust, time, and financial commitment. </h6></div>
-                    <div class="content-max"><img src="img/character-select.svg"></div>
+                    <div class="annotation"><h6>This isn't about building a smarter support bot. It's about what happens when you treat a chatbot as a design research instrument — and discover the real work was never in the interface.</h6></div>
+                    <div class="content-max"><img src="img/prompt-engineering.svg"></div>
                 </div>
                 <div class="container-goldenflex case-point">
                     <div><h4></h4></div>
-                    <div><h5>I'm using Diablo Immortal as a sandbox to explore how UX thinking can reduce the friction that drives casual players away. The trust problem the game faces isn't unique to it: games with overly aggressive monetization face player backlash, negative reviews, and retention problems that ultimately undermine revenue goals. The question this project set out to explore — how do you design for players who haven't committed yet — is one the entire industry is still wrestling with.</h4>
-                        <h5>The mobile gaming market has matured significantly, and that's changed what "success" looks like. While global installs dropped 7% to approximately 49 billion downloads in 2024, the concurrent increases in time spent and session frequency reveal a maturing market focused on retention over acquisition. In other words, the problem isn't getting players to download games — it's keeping them.</h4>
+                    <div class="article-copy">
+                        <h5>When I first started this project, I was — and still am — convinced that chatbots are almost always a generic experience. Real life taught me to resent using them. They feel like a last resort, a wall between you and an actual person, clouding whatever value they might otherwise offer. So when I decided to build one, I wanted to understand the mechanics underneath — what it actually takes to make a tailored experience wherever the user decides to engage.</h5>
+                        <h5>Could I shape the conversation in accordance with how the user intended it to go? Was it smart enough to ask questions and remember what was said? How intrusive would it feel? Was it actually helpful at the moment it appeared?</h5>
+                        <h5>These were the questions I brought into the build. What I found was that the biggest influence on the experience had almost nothing to do with the interface — it came from managing a living document of principles, tone, and cadence that together shaped something that felt personal, even if it was artificial in nature.</h5>
                     </div>
-                
-                
-                    <div><h4></h4></div>
-                    <div><h3>"I know the trend now is that all mobile games 'should be free' and people are used to that by now. But I've laid down cash for several games that I was pretty sure would be pretty good and I haven't been disappointed…"
-                    </h3>
-                    <h6>— Chris Nash, player research respondent</h6>
-                </div>
-                
-                    <div><h4></h4></div>
-                    <div><h5>Studios are increasingly focused on retaining high-value players and building ad-to-experience flows that favor sustained play over fast turnover. This is exactly the kind of problem that UX is positioned to solve, and exactly the tension this project was designed to explore.</h5></div>
-                </div>
             </div>
 
              <!--ITERATION/COMPARE SECTION-->
@@ -171,81 +163,77 @@
             <div class="container-one case-section-body">
             <div class="container-two">
                 <div>
-                    <img src="img/armory-menu.svg">
+                    <img src="img/memory-followup.svg">
                 </div>
                 <div>
-                    <img src="img/skill-menu.svg">
+                    <img src="img/data-openrouter.svg">
                 </div>
             </div>
             </div>
             <div class="container-one case-section-body">
                 <div class="quote case-lead">
-                    <h2>Rather than designing only for business outcomes, the focus was on building rapport with players at different levels of commitment and using that understanding to propose interface improvements that feel rewarding, not manipulative. </h2>
+                    <h2>The placement of a tool is a design decision as much as the tool itself. Showing up at the wrong moment erodes trust faster than not showing up at all.</h2>
                 </div>
             </div>
 
-             <!--FINDINGS SECTION-->
+            <!--FINDINGS SECTION-->
 
         <div class="container-one case-section-body">
             <div class="container-goldenflex case-media">
-                <div class="annotation"><h6>One of the more useful frameworks developed here was a three-tier player spectrum: Free-to-Play, Subscription, and Play-to-Win.</h6></div>
-                <div class="content-max"><img src="img/disclaimer.svg"></div>
+                <div class="annotation"><h6>Visibility restraint builds more trust than availability. The chatbot was removed from the homepage entirely — placed only where a visitor is already showing intent.</h6></div>
+                <div class="content-max"><img src="img/page-detection.svg"></div>
             </div>
             <div class="container-goldenflex case-media">
                 <div class="annotation"><h6></h6></div>
-                <div class="content-max"><img src="img/dialogue.svg"></div>
-            </div>
-            <div class="container-goldenflex case-media">
-                <div class="annotation"><h6></h6></div>
-                <div class="content-max"><img src="img/setting.svg"></div>
-            </div>
-            <div class="container-goldenflex case-media">
-                <div class="annotation"><h6></h6></div>
-                <div class="content-max"><img src="img/quickswap.svg"></div>
-            </div>
-            <div class="container-goldenflex case-media">
-                <div class="annotation"><h6></h6></div>
-                <div class="content-max"><img src="img/complete.svg"></div>
+                <div class="content-max"><img src="img/footer-nudge.svg"></div>
             </div>
 
             <div class="container-one case-section-body">
                 <div class="container-goldenflex case-point">
-                    <div><h4>Casual Players Need Trust</h4></div>
-                    <div><h3>Casual players need a trust-building phase before they're willing to invest time or money.</h3></div>
+                    <div><h4>Prompt Engineering Is Living Document</h4></div>
+                    <div><h3>Token usage entered the conversation early, and it shaped the decision-making process more than expected. Every feature had to earn its place. Free models have real limitations — and those limitations were worth testing before committing to anything more advanced or costly.</h3></div>
                 </div>
                 <div class="container-goldenflex case-point">
-                    <div><h4>Depth and Replayability</h4></div>
-                    <div><h3>The divergence between declining downloads and increasing engagement metrics represents one of the most significant trends in mobile gaming today.
-                    </h3></div>
+                    <div><h4>Sycophancy Is The Default</h4></div>
+                    <div><h3>Several rounds of prompt updates focused specifically on counteracting those tendencies: introducing uncertainty language, pushing back through curiosity rather than compliance, being precise about tone and cadence. Being explicit helps, but it comes with tradeoffs. Every added instruction is more tokens, and more tokens means more cost and more surface area for the model to break mid-conversation.</h3></div>
+                </div>
+                <div class="container-goldenflex case-point">
+                    <div><h4>Restraint Builds More Trust</h4></div>
+                    <div><h3>The chatbot sits on the experimental Lab page, the portfolio index, and all individual project pages. A seven-second scroll nudge appears near the footer — close to the contact information — once per session. These were deliberate decisions rooted in the same thinking that shapes any good experience: respect for the visitor's attention is not optional.</h3></div>
+                </div>
+                <div class="container-goldenflex case-point">
+                    <div><h4>Context Is The Conversation</h4></div>
+                    <div><h3>Passing the current page URL to the backend so the chatbot knows where the visitor is turned out to be a small technical addition with outsized impact. A visitor on a project page is likely evaluating specific work. A visitor on the Lab page is likely curious about the experiment itself. That context — available before a single message is typed — allows the experience to feel tailored from the first interaction, not just after several exchanges.</h3></div>
                 </div>
 
                 <div class="container-goldenflex case-point">
                     <div><h4></h4></div>
-                    <div><h5>The original framing leaned on the mobile gaming trust problem as mainly an issue with aggressive microtransactions — that's still true, but the bigger story now is retention. The market has shifted from chasing downloads to fighting for session time. Download numbers are actually declining industry-wide, which makes the project's focus on keeping casual players engaged is an ongoing industry challenge.</h5></div>
+                    <div class="article-copy">
+                    <h5>What started as a few lines of instruction evolved into a structured document — changed only when necessary, refined through real conversations, and updated deliberately on the backend where the actual behavior lives.</h5>
+                    <h5>The real leverage wasn't in the UI. Every meaningful behavior change — the personality, the memory, the project knowledge, the way it shifted tone depending on who it was talking to — came from how the instructions were written, not from anything visible on screen. My skepticism toward a format I actively disliked became one of the more honest design experiments on my website. The chatbot works because every decision about what it says, where it appears, and how it behaves was made with the same intentionality that should go into any experience meant to serve a person rather than just occupy their screen.</h5>
+                    <h5>This project has been an interesting addition to the site, and it will need more time and real user data to fully assess its value. The next considerations include testing more stable models and building toward the early stages of a lead capture and client pipeline — a system that works in tandem with the chatbot to turn meaningful conversations into something actionable.</h5>
                     </div>
-            
+                    </div>
             </div>
         </section>
 
         <!--PROJECT NAVIGATION-->    
 
       <nav class="project-nav">
-        <a href="../exp-explorenow/index.html" class="nav-prev">
-            <span class="nav-direction">← Previous</span>
-            <span class="nav-title">Building With No Rules</span>
-        </a>
-        <a href="../art-realworld-1/index.html" class="nav-next">
+        
+        <a href="../exp-explorenow/index.html" class="nav-next">
             <span class="nav-direction">Next →</span>
-            <span class="nav-title">The Price Tag is Lying</span>
+            <span class="nav-title">Building With No Rules</span>
         </a>
       </nav>
 
-        
+        <div class="legacy-main-content" aria-hidden="true">
 
      </main>
 
-     <footer id="footer">
+     <!--FOOTER-->
 
+     <footer id="footer">
         <div class="container-one" style="border-bottom: 1px #2b2b2b solid;">
             <div class="title-subtitle">
                 <div class="status-pill">
@@ -287,7 +275,6 @@
             </div>        
         </div>
 
-
     </footer>
 
      <!--Jquery, Popper, Bootstrap JS-->
@@ -299,6 +286,5 @@
     crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-    
 </body>
 </html>
